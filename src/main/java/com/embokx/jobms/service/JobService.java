@@ -1,6 +1,6 @@
 package com.embokx.jobms.service;
 
-import com.embokx.companyms.company.entity.Company;
+
 import com.embokx.jobms.jobms.entity.Job;
 import com.embokx.jobms.repository.JobRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,8 +19,7 @@ public class JobService {
     }
 
     public List<Job> findAllJobs() {
-        RestTemplate restTemplate = new RestTemplate();
-        restTemplate.getForObject("http://localhost:8081/company/getcompany/1", Company.class);
+
         return jobRepository.findAll();
 
     }
