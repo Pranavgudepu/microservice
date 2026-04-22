@@ -20,11 +20,24 @@ pipeline {
                 bat 'mvn clean package'
             }
         }
+        stage('Test') {
+            steps {
+                bat mvn test'
+            }
+        }
 
         stage('Deploy') {
             steps {
                 bat 'start cmd /c java -jar target\\jobms-0.0.1-SNAPSHOT.jar'
             }
+        }
+    }
+    post {
+        success {
+            echo 'Build sucessful'
+        }
+        failure {
+            echo 'Build failed'
         }
     }
 }
