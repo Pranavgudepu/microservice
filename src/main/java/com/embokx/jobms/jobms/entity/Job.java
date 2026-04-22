@@ -16,6 +16,7 @@ public class Job {
     private double job_max_salary;
     private String job_location;
     private Long company_id;
+    //test
 
     public Long getCompany_id() {
         return company_id;
